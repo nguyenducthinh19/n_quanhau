@@ -1,0 +1,18 @@
+cot=[0]*1000  # gọi cột j là cột mà chứa quân hậu thứ i
+d1=[0]*1000 # d1 là đường chéo thứ 1 mà quân hậu thứ i tại cột j quản lí
+d2=[0]*1000 # d2 là đường chéo thứ 2 mà quân hậu thứ i tại cột j quản lí
+dem=0
+def thu (i,n): 
+    for j in range (1,n+1):# duyệt từ 1 đến n
+        if not cot[j] and not d1[i+j-1] and not d2[i-j+n]:# nếu cột j trống và 2 đường chéo trống
+            cot[j]=i # đánh dấu cột j đã chứa quân hậu thứ i
+            d1[i+j-1]=d2[i-j+n]=1  # đánh dấu 2 đường chéo 
+            if i==n : # nếu là cấu hình cuối
+                for v in range (1,n+1):  # duyệt cấu hình thoả mãn
+                    print("quan hau thu " , v ," nam o vi tri thu ", cot[v])# đưa ra kết quả
+            else : # nếu chưa là cấu hình cuối
+                thu(i+1,n)
+            cot[j]=d1[i+j-1]=d2[i-j+n]=0 # bỏ đánh dấu cột và 2 đường chéo
+
+n=int(input())
+thu(1,n)
