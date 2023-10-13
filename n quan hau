@@ -1,6 +1,6 @@
 cot=[0]*1000  # gọi cột j là cột mà chứa quân hậu thứ i
-d1=[0]*1000 # d1 là đường chéo thứ 1 mà quân hậu thứ i tại cột j quản lí
-d2=[0]*1000 # d2 là đường chéo thứ 2 mà quân hậu thứ i tại cột j quản lí
+d1=[0]*1000 # d1 là đường chéo phụ mà quân hậu thứ i tại cột j quản lí
+d2=[0]*1000 # d2 là đường chéo chính mà quân hậu thứ i tại cột j quản lí
 dem=0
 def thu (i,n): 
     for j in range (1,n+1):# duyệt từ 1 đến n
